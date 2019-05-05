@@ -1,0 +1,292 @@
+/* http://www.mariaantoniettaperna.com/MyjQueryDemos/DrawingBoardDemo/PaintAppDemo.html 
+   Css styles by Maria Antonietta Perna*/
+
+*
+{
+  margin:0px;
+  padding:0px;
+}
+
+body
+{
+  width:80%;
+  margin:0px auto;
+  font-family: Georgia, serif;
+  font-size: 24px;
+  line-height:150%;
+  position:relative;
+}
+
+h1
+{
+  font-size:90%;
+  color:orange;
+  font-weight:normal;
+}
+
+h2
+{
+  font-size:80%;
+}
+
+h3
+{
+  font-size:70%;
+  font-family:Verdana, Sans-Serif;
+}
+
+p
+{
+  font-size:70%;
+  max-width:70%;
+  font-family:Verdana, Sans-Serif;
+}
+
+a:link, a:active
+{
+  color:#330066;
+}
+
+a:hover
+{
+  color:#FFF;
+  background-color:#CCCCFF;
+  border:2px outset #DDD;
+  text-decoration:none;
+}
+
+#helpLink
+{
+  font-size:70%;
+  display:block;
+  max-width:30%;
+}
+
+#eraserLink , #deselectEraserLink
+{
+  display:block;
+  text-decoration:none;
+  font-size:50%;
+  height:50px;
+}
+
+#eraserLink  .Unselected, #deselectEraserLink img 
+{
+  width:40%;
+  float:left;
+}
+
+#eraserLink .Selected
+{
+  border:5px solid #333;
+  width:60%;
+  float:left;
+}
+
+ol
+{
+  list-style-position:inside;
+}
+
+ol li
+{
+  font-size:60%; 
+  border:1px inset #DDD;
+  padding:5px;
+}
+
+ul
+{
+  list-style-type:none;
+}
+
+.alt
+{
+  background-color:#DDD;
+}
+
+.ClearFloats
+{
+  clear:both;
+}
+
+.Instructions
+{
+  width:40%;
+  background-color:#CCCFFF;
+  padding:10px;
+  font-weight:bold;
+  color:#000;
+  position:absolute;
+  top:70px;
+  left:0px;
+  height:300px;
+  overflow:scroll;
+}
+
+#myCanvas
+{
+  margin-top:10px;
+  border:2px inset #DDD;
+  cursor:crosshair;
+}
+
+#sideCol
+{
+  float:right;
+  width:30%;
+}
+
+#sideCol img
+{
+  border:0px;
+  padding:5px;
+}
+
+#footer
+{
+  width:100%;
+  clear:both;
+  padding:20px;
+}
+
+.ToolsSettingsContainer
+{
+  width:90%;
+  border:2px inset #666;
+  background-color:#DDD;  
+}
+
+.ToolsSettingsContainer h2, .TextSettingsContainer h2
+{
+  color:#FF0000;
+  cursor:pointer;
+}
+
+.TextSettingsContainer
+{
+  border:2px inset #666;
+  margin-top:5px;
+  padding:5px;
+}
+
+
+.TextSettingsContainer textarea
+{
+  overflow:hidden;
+}
+
+#fontList
+{
+  font-size:60%;
+}
+
+#fontList label, #fontSizeList label
+{
+  margin-left:5px;
+}
+
+.Times
+{
+  font-family:Times New Roman, Times, serif;
+}
+
+.Verdana
+{
+  font-family:Verdana, Geneva, sans-serif;
+}
+
+.Comic
+{
+  font-family:Comic Sans MS, cursive, sans-serif;
+}
+
+.Impact
+{
+  font-family:Impact, Charcoal;
+}
+
+.Size12
+{
+  font-size:12px;
+}
+
+.Size14
+{
+  font-size:14px;
+}
+
+.Size16
+{
+  font-size:16px;
+}
+
+.Size22
+{
+  font-size:22px;
+}
+
+select
+{
+  background-color:#DDD;
+  color:#FFF;
+  font-weight:bold;
+  padding:5px;
+}
+
+#selectColor #colBlack
+{
+  background-color:#000;
+}
+
+#selectColor #colRed
+{
+  background-color:#FF0000;
+}
+
+#selectColor #colBlue
+{
+  background-color:blue;
+}
+
+#selectColor #colGreen
+{
+  background-color:green;
+}
+
+#colOrange
+{
+  background-color:orange;
+} 
+
+#colYellow
+{
+  background-color:yellow;
+}
+
+#colLightGray
+{
+  background-color:#CCC;
+}
+
+#colDarkerGray
+{
+  background-color:#666;
+}
+
+#colAqua
+{
+  background-color:aqua;
+}
+
+#selectColor option
+{
+  height:30px;
+  padding:5px;
+}
+
+#selectDraw option
+{
+  height:30px;
+}
+

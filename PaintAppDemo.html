@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+  <html>
+    <head>
+	  <meta charset="UTF-8" />
+	  <title>My HTML5 Canvas Drawing Board Demo</title>
+	  <meta name="description" content="Maria Antonietta Perna Html5 Canvas Drawing Board Demo" />
+	  <meta name="keywords" content="HTML5,Canvas,jQuery" />
+	  <meta name="author" content="Maria Antonietta Perna" />
+	  <link rel="stylesheet" media="all" href="DrawStyles.css" />
+	  <script type="text/javascript" src="jquery.js"></script>
+	  <script type="text/javascript" src="DrawPaintScript.js"></script>
+    </head>
+    <body>
+	  <h1>Drawing Board</h1>
+	  <a href="#" id="helpLink" title="Open/close instructions box">Open/close instructions box&raquo;</a>
+	  <div class="Instructions">
+	    <h2>How to use the drawing board</h2>
+		<ol>
+		  <li>Select a drawing tool from the drop-down box: a line, a pencil, a rectangle or a circle;</li>
+		  <li class="alt">When you select either the line or the pencil tool you'll be able to pick a line width from a sub-menu.  If you don't make a selection the line is se at a default of 2 pixels;</li>
+		  <li>When you select the Text tool you'll be able to write your text in the appropriate box, pick a font and a font size.  Simply proceed to pick a color and click into the drawing board;</li>
+		  <li class="alt">Select a color from the drop-down box: black, red, blue, green, orange, yellow;</li>
+		  <li>Press the left-mouse button inside the canvas, keep it pressed while drawing.  Release the mouse button each time you start on a new line or shape;</li>
+		  <li class="alt">Click the link at the top to erase all content from the canavas;</li>
+		  <li>Click the eraser to delete just bits of content from the canvas: just use the mouse the same way as the pencil tool. Make sure to click the deselect eraser tool before starting drawing again.</li>
+		</ol>
+	  </div>
+	  <canvas id="myCanvas" width="500" height="500">
+	    <p>Your browser does not support HTML5 canvas element needed to use this application.  Download <a href="http://www.google.com/support/chrome/bin/answer.py?answer=95346" title="Google Chrome">Google Chrome</a> or <a href="http://www.mozilla.com/en-US/firefox/all.html" title="Firefox">Firefox</a>.</p>
+	  </canvas>
+	 
+	  <div id="sideCol">
+	    <a href="#" id="clearLink" title="Clear Canvas">Clear all canvas</a> 
+		<a href="#" id="eraserLink"><img src="Images/eraser.jpg" class="Unselected" alt="select canvas eraser" /> Select eraser</a>
+		<div class="ClearFloats"></div>
+		<a href="#" id="deselectEraserLink"><img src="Images/clear_eraser.jpg" alt="deselect canvas eraser" /> Deselect eraser</a>
+		<div class="ClearFloats"></div>
+		<h2>Pick up a drawing tool</h2>
+	    <select id="selectDraw">
+	      <option value='0'>-Make your drawing selection-</option>
+		  <option value='Line'>Line</option>
+		  <option value='Pencil'>Pencil</option>
+		  <option value='Rectangle'>Rectangle</option>
+		  <option value='Circle'>Circle</option>
+		  <option value='Text'>Text</option>
+	    </select>
+		<div class="ToolsSettingsContainer">
+		  <h3>Would you like to select a line width for your line, pencil or text?</h3>
+		  <ul id="lineWidthList">
+		    <li><input type="radio" value="2" id="rb2" name="rb" /><label for="rb2"><img src="Images/line2.gif" alt="line width 2" /> line width 2</label></li>
+		    <li><input type="radio" value="5" id="rb5" name="rb" /><label for="rb5"><img src="Images/line5.gif" alt="line width 5" /> line width 5</label></li>
+		    <li><input type="radio" value="10" id="rb10" name="rb" /><label for="rb10"><img src="Images/line10.gif" alt="line width 10" /> line width 10</label></li>
+		    <li><input type="radio" value="15" id="rb15" name="rb" /><label for="rb15"><img src="Images/line15.gif" alt="line width 15" /> line width 15</label></li>
+		    <li><input type="radio" value="20" id="rb20" name="rb" /><label for="rb20"><img src="Images/line20.gif" alt="line width 20" /> line width 20</label></li>
+		  </ul>
+		  <h2>X Close</h2>
+		</div>
+		<div class="TextSettingsContainer">
+		  <h3>Write your text in the area below</h3>
+		  <textarea id="txtArea" cols="25" rows="5"></textarea>
+		  <h3>Would you like to select a font for your text?</h3>
+		  <ul id="fontList">
+		    <li><input type="radio" value="times new roman" id="rbTimes" name="rbFonts" /><label for="rbTimes"><span class="Times">Times New Roman</span></label></li>
+			<li><input type="radio" value="verdana" id="rbVerdana" name="rbFonts" /><label for="rbVerdana"><span class="Verdana">Verdana</span></label></li>
+			<li><input type="radio" value="comic sans MS" id="rbComic" name="rbFonts" /><label for="rbComic"><span class="Comic">Comic Sans Serif</span></label></li>
+			<li><input type="radio" value="impact" id="rbImpact" name="rbFonts" /><label for="rbImpact"><span class="Impact">Impact/Charcoal</span></label></li>
+		  </ul>
+		  <h3>Would you like to select a size for your font?</h3>
+		  <ul id="fontSizeList">
+		    <li><input type="radio" value="12px" id="rb12" name="rbSize" /><label for="rb12"><span class="Size12">12px size</span></label></li>
+			<li><input type="radio" value="14px" id="rb14" name="rbSize" /><label for="rb14"><span class="Size14">14px size</span></label></li>
+			<li><input type="radio" value="16px" id="rb16" name="rbSize" /><label for="rb16"><span class="Size16">16px size</span></label></li>
+			<li><input type="radio" value="22px" id="rb22" name="rbSize" /><label for="rb22"><span class="Size22">22px size</span></label></li>
+		  </ul>
+		  <h2>X Close</h2>
+		</div>
+		<h2>Pick up a color</h2>
+	    <select id="selectColor">
+	      <option value='0'>-Make your color selection-</option>
+		  <option id="colBlack" value='black'>Black</option>
+		  <option id="colRed" value='red'>Red</option>
+		  <option id="colBlue" value='blue'>Blue</option>
+		  <option id="colGreen" value='green'>Green</option>
+		  <option id="colOrange" value="orange">Orange</option>
+		  <option id="colYellow" value="yellow">Yellow</option>
+		  <option id="colLightGray" value="#ccc">Light Gray</option>
+		  <option id="colDarkerGray" value="#666">Darker Gray</option>
+		  <option id="colAqua" value="aqua">Aqua</option>
+	    </select>
+      </div>
+	  <div id="footer">
+	  </div>
+    </body>
+  </html>
